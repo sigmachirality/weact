@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true
+  },
+  "outDir": ".",
+  "include": ["src/", "jsx-dev-runtime", "jsx-runtime", "compat"],
+  "exclude": ["node_modules", "test", "dist"],
+}

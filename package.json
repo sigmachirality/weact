@@ -1,0 +1,33 @@
+{
+  "name": "weact",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A degenerate, drop-in replacement for React and its JSX pragma.",
+  "main": "./dist/index.umd.js",
+  "types": "./dist/index.d.ts",
+  "source": "./src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "install-peers",
+    "build": "microbundle build --globals react=React,react/jsx-runtime=ReactJSX,react/jsx-dev-runtime=ReactJSXDev",
+    "test": "yarn build && yalc publish --push"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./jsx-runtime": "./src/jsx-runtime/index.ts",
+    "./jsx-dev-runtime": "./src/jsx-dev-runtime/index.ts",
+    "./compat": "./src/compat/index.ts"
+  },
+  "dependencies": {
+    "typescript": "^4.7.4"
+  },
+  "peerDependencies": {
+    "react": ">= 17.x",
+    "react-dom": ">= 17.x"
+  },
+  "devDependencies": {
+    "install-peers-cli": "^2.2.0",
+    "microbundle": "^0.15.1",
+    "yalc": "latest"
+  }
+}
